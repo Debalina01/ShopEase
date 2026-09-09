@@ -23,9 +23,8 @@ A modern and responsive fashion e-commerce website designed to provide a smooth 
 * 🔤 **Font Awesome** – Icons
 * 🚀 **Netlify** – Deployment
 
-## 📂 Project Structure
-
-ShopEase
+📂 Project Structure
+ShopEase/
 │
 ├── index.html
 ├── style.css
@@ -34,7 +33,7 @@ ShopEase
     ├── banner images
     ├── product images
     └── other website assets
-
+    
 ## 🎯 Project Highlights
 
 * 💻 Developed a complete front-end fashion e-commerce website from scratch.
