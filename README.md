@@ -25,7 +25,7 @@ A modern and responsive fashion e-commerce website designed to provide a smooth 
 
 ## 📂 Project Structure
 
-ShopEase/
+ShopEase
 │
 ├── index.html
 ├── style.css
