@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEase</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+
+<div class="delivery-overlay" id="deliveryOverlay">
+
+    <div class="delivery-popup">
+
+        
+        <span
+            class="delivery-close"
+            onclick="closeDeliveryLocation()"
+        >&times;</span>
+
+
+        <h2>Set Delivery Location</h2>
+
+        <p class="delivery-subtitle">
+            Enter your location to see products available for delivery.
+        </p>
+
+
+        <div class="location-input-row">
+
+
+         
+            <div
+                class="country-box"
+                onclick="toggleCountryDropdown()"
+            >
+
+                <div
+                    class="selected-country"
+                    id="selectedCountry"
+                >
+
+                    <img
+                        src="https://flagcdn.com/w40/in.png"
+                        class="country-flag"
+                        alt="India"
+                    >
+
+                    <span class="country-name">
+                        India
+                    </span>
+
+                    <span
+                        class="country-arrow"
+                        id="countryArrow"
+                    >
+                        ▼
+                    </span>
+
+                </div>
+
+
+
+                <div
+                    class="country-dropdown"
+                    id="countryDropdown"
+                >
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/in.png', 'India')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/in.png"
+                            class="country-flag"
+                            alt="India"
+                        >
+                        <span>India</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/us.png', 'USA')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/us.png"
+                            class="country-flag"
+                            alt="USA"
+                        >
+                        <span>USA</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/gb.png', 'United Kingdom')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/gb.png"
+                            class="country-flag"
+                            alt="United Kingdom"
+                        >
+                        <span>United Kingdom</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/ca.png', 'Canada')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/ca.png"
+                            class="country-flag"
+                            alt="Canada"
+                        >
+                        <span>Canada</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/au.png', 'Australia')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/au.png"
+                            class="country-flag"
+                            alt="Australia"
+                        >
+                        <span>Australia</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/ae.png', 'UAE')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/ae.png"
+                            class="country-flag"
+                            alt="UAE"
+                        >
+                        <span>UAE</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/sg.png', 'Singapore')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/sg.png"
+                            class="country-flag"
+                            alt="Singapore"
+                        >
+                        <span>Singapore</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/my.png', 'Malaysia')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/my.png"
+                            class="country-flag"
+                            alt="Malaysia"
+                        >
+                        <span>Malaysia</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/jp.png', 'Japan')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/jp.png"
+                            class="country-flag"
+                            alt="Japan"
+                        >
+                        <span>Japan</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/kr.png', 'South Korea')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/kr.png"
+                            class="country-flag"
+                            alt="South Korea"
+                        >
+                        <span>South Korea</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/cn.png', 'China')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/cn.png"
+                            class="country-flag"
+                            alt="China"
+                        >
+                        <span>China</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/de.png', 'Germany')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/de.png"
+                            class="country-flag"
+                            alt="Germany"
+                        >
+                        <span>Germany</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/fr.png', 'France')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/fr.png"
+                            class="country-flag"
+                            alt="France"
+                        >
+                        <span>France</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/it.png', 'Italy')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/it.png"
+                            class="country-flag"
+                            alt="Italy"
+                        >
+                        <span>Italy</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/es.png', 'Spain')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/es.png"
+                            class="country-flag"
+                            alt="Spain"
+                        >
+                        <span>Spain</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/be.png', 'Belgium')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/be.png"
+                            class="country-flag"
+                            alt="Belgium"
+                        >
+                        <span>Belgium</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/np.png', 'Nepal')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/np.png"
+                            class="country-flag"
+                            alt="Nepal"
+                        >
+                        <span>Nepal</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/bd.png', 'Bangladesh')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/bd.png"
+                            class="country-flag"
+                            alt="Bangladesh"
+                        >
+                        <span>Bangladesh</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/lk.png', 'Sri Lanka')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/lk.png"
+                            class="country-flag"
+                            alt="Sri Lanka"
+                        >
+                        <span>Sri Lanka</span>
+                    </div>
+
+
+                    <div
+                        class="country-option"
+                        onclick="selectCountry(event, 'https://flagcdn.com/w40/bt.png', 'Bhutan')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/bt.png" 
+                            class="country-flag" 
+                            alt="Bhutan" 
+                        > 
+                        <span>Bhutan</span> 
+                    </div> 
+ 
+ 
+                </div> 
+ 
+            </div> 
+ 
+ 
+ 
+            <div class="pincode-box"> 
+ 
+                <input 
+                    type="text" 
+                    id="pincodeInput" 
+                    placeholder="Enter Pin Code" 
+                    maxlength="6" 
+                    onkeydown="if(event.key === 'Enter') { event.preventDefault(); searchPincode(); }" 
+                > 
+ 
+                <span 
+                    class="pin-search-icon" 
+                    onclick="searchPincode()" 
+                > 
+                    ⌕ 
+                </span> 
+ 
+            </div> 
+ 
+        </div> 
+ 
+ 
+        <div class="pincode-help"> 
+ 
+            <span>?</span> 
+ 
+            <a 
+                href="#" 
+                onclick="dontKnowPincode(event)" 
+            > 
+                Don't know pincode? 
+            </a> 
+ 
+        </div> 
+ 
+ 
+ 
+        <div class="delivery-divider"> 
+ 
+            <span>OR</span> 
+ 
+        </div> 
+ 
+ 
+ 
+        <button 
+            type="button" 
+            class="use-location-btn" 
+            onclick="useCurrentLocation()" 
+        > 
+            📍 Use My Current Location 
+        </button> 
+ 
+ 
+       
+ 
+        <div 
+            id="locationMessage" 
+            class="location-message" 
+        ></div> 
+ 
+ 
+    </div> 
+ 
+</div> 
+ 
+ 
+ 
+<nav> 
+ 
+    <div class="menu"> 
+ 
+        <div class="logo"> 
+            <a href="#"> 
+ 
+                <img 
+                    src="images/logo1.png" 
+                    alt="ShopEase Logo" 
+                    class="logo-img" 
+                > 
+ 
+                <span>ShopEase</span> 
+ 
+            </a> 
+        </div> 
+ 
+ 
+        <div 
+            class="delivery-location" 
+            onclick="openDeliveryLocation()" 
+        > 
+ 
+            <span class="location-icon"> 
+                📍 
+            </span> 
+ 
+            <span class="delivery-text"> 
+                Where to Deliver 
+            </span> 
+ 
+            <span class="location-arrow"> 
+                ⌄ 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <ul> 
+ 
+            <li class="women-menu"> 
+                <a href="#">Women</a> 
+            </li> 
+ 
+            <li> 
+                <a href="#">Men</a> 
+            </li> 
+ 
+            <li> 
+                <a href="#">Kids</a> 
+            </li> 
+ 
+            <li> 
+                <a href="#">Home Deco</a> 
+            </li> 
+ 
+            <li> 
+                <a href="#">Contact</a> 
+            </li> 
+         
+ 
+ 
+            <li class="search-item"> 
+ 
+                <div class="search-box"> 
+ 
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search dresses..." 
+                    > 
+ 
+                    <span class="search-icon"> 
+                        ⌕ 
+                    </span> 
+ 
+                </div> 
+ 
+            </li> 
+ 
+ 
+            <li> 
+ 
+                <a href="#" class="bag-link"> 
+ 
+                    <span class="bag-icon"></span> 
+ 
+                    <span class="bag-badge"> 
+                        1 
+                    </span> 
+ 
+                </a> 
+ 
+            </li> 
+<li class="phone-item"> 
+    <a href="tel:+919876543210" class="phone-link"> 
+        <span class="phone-icon">☎</span> 
+        <span class="phone-number">+91 98765 43210</span> 
+    </a> 
+</li> 
+ 
+            <li class="account-item"> 
+ 
+                <a 
+                    href="#" 
+                    onclick="openLogin(); return false;" 
+                    class="user-icon" 
+                > 
+ 
+                    <span class="profile-face"></span> 
+ 
+                    <span class="message-badge"> 
+                        1 
+                    </span> 
+ 
+                </a> 
+ 
+            </li> 
+ 
+        </ul> 
+ 
+    </div> 
+ 
+</nav> 
+
+ 
+<div class="slideshow"> 
+ 
+    <div class="slide active"> 
+ 
+    
+        <img src="images/blurphoto.jpg" alt="ShopEase Background" class="banner-bg"> 
+ 
+        <img src="images/sidemodel1.png" alt="Model Left" class="side-picture side-left"> 
+ 
+        
+        <img src="images/model1.jpg" alt="New Collection" class="middle-picture"> 
+ 
+ 
+<div class="price-circle"> 
+    <span>from</span> 
+    <strong>$3.99</strong> 
+</div> 
+ 
+        <img src="images/sidemodel2.png" alt="Model Right" class="side-picture side-right"> 
+ 
+        <div class="banner-content"> 
+            <h1>New Arrivals</h1> 
+            <h2>Summer Wear</h2> 
+              
+ 
+        </div> 
+ 
+    </div> 
+ 
+ 
+    <div class="slide"> 
+ 
+       
+        <img src="images/blurphoto.jpg" alt="ShopEase Background" class="banner-bg"> 
+ 
+        <img src="images/sidemodel1.png" alt="Model Left" class="side-picture side-left"> 
+ 
+      
+        <img src="images/model2.png" alt="Women's Wear" class="middle-picture"> 
+ 
+         
+ 
+<div class="price-circle"> 
+    <span>from</span> 
+    <strong>$3.99</strong> 
+</div> 
+ 
+        <img src="images/sidemodel2.png" alt="Model Right" class="side-picture side-right"> 
+ 
+        <div class="banner-content"> 
+            <h1>New Collection</h1> 
+            <h2>Women's Wear</h2> 
+        </div> 
+ 
+    </div> 
+ 
+ 
+    
+    <div class="slide"> 
+ 
+        
+        <img src="images/blurphoto.jpg" alt="ShopEase Background" class="banner-bg"> 
+ 
+        <img src="images/sidemodel1.png" alt="Model Left" class="side-picture side-left"> 
+ 
+        
+        <img src="images/model3.png" alt="Fashion Collection" class="middle-picture"> 
+ 
+        
+ 
+<div class="price-circle"> 
+    <span>from</span> 
+    <strong>$3.99</strong> 
+</div> 
+        <img src="images/sidemodel2.png" alt="Model Right" class="side-picture side-right"> 
+ 
+        <div class="banner-content"> 
+            <h1>Trending Now</h1> 
+            <h2>Fashion Collection</h2> 
+        </div> 
+ 
+    </div> 
+
+    <div class="slide"> 
+  
+        <img src="images/blurphoto.jpg" alt="ShopEase Background" class="banner-bg"> 
+ 
+        <img src="images/sidemodel1.png" alt="Model Left" class="side-picture side-left"> 
+  
+        <img src="images/model4.png" alt="ShopEase Exclusive" class="middle-picture"> 
+ 
+         
+ 
+<div class="price-circle"> 
+    <span>from</span> 
+    <strong>$3.99</strong> 
+</div> 
+        <img src="images/sidemodel2.png" alt="Model Right" class="side-picture side-right"> 
+ 
+        <div class="banner-content"> 
+            <h1>Special Collection</h1> 
+            <h2>ShopEase Exclusive</h2> 
+        </div> 
+ 
+    </div> 
+    
+ 
+  
+    <button class="banner-arrow prev-arrow" onclick="previousSlide()"> 
+        &#10094; 
+    </button> 
+ 
+ 
+   
+    <button class="banner-arrow next-arrow" onclick="nextSlide()"> 
+        &#10095; 
+    </button> 
+ 
+</div> 
+
+<section class="popular-shopease"> 
+ 
+    <h2>Popular on ShopEase</h2> 
+ 
+    <div class="popular-categories"> 
+    <a href="#">Women</a> 
+    <span>/</span> 
+    <a href="#">Men</a> 
+    <span>/</span> 
+    <a href="#">Kids</a> 
+    <span>/</span> 
+    <a href="#">Home Decor</a> 
+</div> 
+ 
+</section> 
+ 
+
+ 
+<section class="products-section"> 
+ 
+    <div class="products-grid"> 
+  
+        <div class="product-card"> 
+ 
+            <div class="product-image-box"> 
+                <img src="images/modelow2.jpg" alt="Cool Clothing "> 
+ 
+                </div> 
+ 
+            <div class="product-info"> 
+ 
+                <div class="product-title-row"> 
+                    <span class="product-title">Cool Clothing with</span> 
+ 
+                     
+ 
+                  <span class="stars"> 
+                        ★★★★★ 
+                    </span> 
+                </div> 
+ 
+                <div class="brown-stripe"></div> 
+ 
+                <div class="product-price-row"> 
+                    <span class="category">in category</span> 
+                    <strong>$3.99</strong> 
+                </div> 
+ 
+                <div class="product-actions"> 
+ 
+                    <button class="wishlist-btn"> 
+                        <span class="heart">♡</span> 
+                        <span>1</span> 
+                    </button> 
+ 
+                    <button class="bag-btn"> 
+                        <span class="bag-small"></span> 
+                    </button> 
+ 
+                </div> 
+ 
+            </div> 
+        </div> 
+  
+        <div class="product-card"> 
+ 
+            <div class="product-image-box"> 
+                <img src="images/model3.png" alt="Cool Clothing"> 
+            </div> 
+ 
+            <div class="product-info"> 
+ 
+                <div class="product-title-row"> 
+                    <span class="product-title">Cool Clothing with</span> 
+ 
+                    <span class="stars"> 
+                        ★★★★★ 
+                    </span> 
+                </div> 
+ 
+                <div class="brown-stripe"></div> 
+ 
+                <div class="product-price-row"> 
+                    <span class="category">in category</span> 
+                    <strong>$3.99</strong> 
+                </div> 
+ 
+                <div class="product-actions"> 
+ 
+                    <button class="wishlist-btn"> 
+                        <span class="heart">♡</span> 
+                        <span>1</span> 
+                    </button> 
+ 
+                    <button class="bag-btn"> 
+                        <span class="bag-small"></span> 
+                    </button> 
+ 
+                </div> 
+ 
+            </div> 
+        </div> 
+  
+        <div class="product-card"> 
+ 
+            <div class="product-image-box"> 
+                <img src="images/model1.jpg" alt="Cool Clothing"> 
+            </div> 
+ 
+            <div class="product-info"> 
+ 
+                <div class="product-title-row"> 
+                    <span class="product-title">Cool Clothing with</span> 
+ 
+                    <span class="stars"> 
+                        ★★★★★ 
+                    </span> 
+                </div> 
+ 
+                <div class="brown-stripe"></div> 
+ 
+                <div class="product-price-row"> 
+                    <span class="category">in category</span> 
+                    <strong>$3.99</strong> 
+                </div> 
+ 
+                <div class="product-actions"> 
+ 
+                    <button class="wishlist-btn"> 
+                        <span class="heart">♡</span> 
+                        <span>1</span> 
+                    </button> 
+ 
+                    <button class="bag-btn"> 
+                        <span class="bag-small"></span> 
+                    </button> 
+ 
+                </div> 
+ 
+            </div> 
+        </div> 
+  
+        <div class="product-card"> 
+ 
+            <div class="product-image-box"> 
+                <img src="images/modelow.png" alt="Cool Clothing"> 
+            </div> 
+ 
+            <div class="product-info"> 
+ 
+                <div class="product-title-row"> 
+                    <span class="product-title">Cool Clothing with</span> 
+ 
+                    <span class="stars"> 
+                        ★★★★★ 
+                    </span> 
+                </div> 
+ 
+                <div class="brown-stripe"></div> 
+ 
+                <div class="product-price-row"> 
+                    <span class="category">in category</span> 
+                    <strong>$3.99</strong> 
+                </div> 
+ 
+                <div class="product-actions"> 
+ 
+                    <button class="wishlist-btn"> 
+                        <span class="heart">♡</span> 
+                        <span>1</span> 
+                    </button> 
+ 
+                    <button class="bag-btn"> 
+                        <span class="bag-small"></span> 
+                    </button> 
+ 
+                </div> 
+ 
+            </div> 
+        </div> 
+ 
+  
+        <div class="product-card"> 
+ 
+            <div class="product-image-box"> 
+                <img src="images/sidemodel2.png" alt="Cool Clothing"> 
+            </div> 
+ 
+            <div class="product-info"> 
+ 
+                <div class="product-title-row"> 
+                    <span class="product-title">Cool Clothing with</span> 
+ 
+                    <span class="stars"> 
+                        ★★★★★ 
+                    </span> 
+                </div> 
+ 
+                <div class="brown-stripe"></div> 
+ 
+                <div class="product-price-row"> 
+                    <span class="category">in category</span> 
+                    <strong>$3.99</strong> 
+                </div> 
+ 
+                <div class="product-actions"> 
+ 
+                    <button class="wishlist-btn"> 
+                        <span class="heart">♡</span> 
+                        <span>1</span> 
+                    </button> 
+ 
+                    <button class="bag-btn"> 
+                        <span class="bag-small"></span> 
+                    </button> 
+ 
+                </div> 
+ 
+            </div> 
+        </div> 
+ 
+ 
+        <div class="product-card">
+
+            <div class="product-image-box">
+                <img src="images/model4.png" alt="Cool Clothing">
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-title-row">
+                    <span class="product-title">Cool Clothing with</span>
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+                </div>
+
+                <div class="brown-stripe"></div>
+
+                <div class="product-price-row">
+                    <span class="category">in category</span>
+                    <strong>$3.99</strong>
+                </div>
+
+                <div class="product-actions">
+
+                    <button class="wishlist-btn">
+                        <span class="heart">♡</span>
+                        <span>1</span>
+                    </button>
+
+                    <button class="bag-btn">
+                        <span class="bag-small"></span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        
+        <div class="product-card">
+
+            <div class="product-image-box">
+                <img src="images/moremodel2.png" alt="Cool Clothing">
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-title-row">
+                    <span class="product-title">Cool Clothing with</span>
+                    <span class="stars">★★★★★</span>
+                </div>
+
+                <div class="brown-stripe"></div>
+
+                <div class="product-price-row">
+                    <span class="category">in category</span>
+                    <strong>$3.99</strong>
+                </div>
+
+                <div class="product-actions">
+
+                    <button class="wishlist-btn">
+                        <span class="heart">♡</span>
+                        <span>1</span>
+                    </button>
+
+                    <button class="bag-btn">
+                        <span class="bag-small"></span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        
+        <div class="product-card">
+
+            <div class="product-image-box">
+                <img src="images/moremodel1 (1).png" alt="Cool Clothing">
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-title-row">
+                    <span class="product-title">Cool Clothing with</span>
+                    <span class="stars">★★★★★</span>
+                </div>
+
+                <div class="brown-stripe"></div>
+
+                <div class="product-price-row">
+                    <span class="category">in category</span>
+                    <strong>$3.99</strong>
+                </div>
+
+                <div class="product-actions">
+
+                    <button class="wishlist-btn">
+                        <span class="heart">♡</span>
+                        <span>1</span>
+                    </button>
+
+                    <button class="bag-btn">
+                        <span class="bag-small"></span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        
+        <div class="product-card">
+
+            <div class="product-image-box">
+                <img src="images/moremodel3.png" alt="Cool Clothing">
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-title-row">
+                    <span class="product-title">Cool Clothing with</span>
+                    <span class="stars">★★★★★</span>
+                </div>
+
+                <div class="brown-stripe"></div>
+
+                <div class="product-price-row">
+                    <span class="category">in category</span>
+                    <strong>$3.99</strong>
+                </div>
+
+                <div class="product-actions">
+
+                    <button class="wishlist-btn">
+                        <span class="heart">♡</span>
+                        <span>1</span>
+                    </button>
+
+                    <button class="bag-btn">
+                        <span class="bag-small"></span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<div class="load-more-container">
+    <button class="load-more-btn">
+        LOAD MORE
+    </button>
+</div>
+
+
+
+<section class="collection-promos">
+
+    
+    <div class="promo-box">
+
+        <img src="images/blurmodel1.png" class="promo-bg" alt="Trendsetter Collection">
+
+        <img src="images/blurmodel1.png" class="promo-main" alt="Trendsetter Collection">
+
+        <div class="promo-text">
+           
+          <h2>Trendsetter<br>Collection</h2> 
+        </div>
+
+    </div>
+
+
+    <div class="promo-box">
+
+        <img src="images/blurmodel2.png" class="promo-bg" alt="Popular Choice">
+
+        <img src="images/blurmodel2.png" class="promo-main" alt="Popular Choice">
+
+        <div class="promo-text">
+            
+          <h2>Popular<br>Choice</h2>
+        </div>
+
+    </div>
+
+
+    
+    <div class="promo-box">
+
+        <img src="images/blurmodel3.png" class="promo-bg" alt="Premium Collection">
+
+        <img src="images/blurmodel3.png" class="promo-main" alt="Premium Collection">
+
+        <div class="promo-text">
+           
+         <h2>Premium<br>Collection</h2>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="service-features">
+
+    
+    <div class="service-item">
+        
+<div class="service-icon">
+    <img src="images/payment logo (1).png" alt="Fast Secure Payments">
+</div>
+
+        <div class="service-text">
+            <h3>Fast Secure</h3>
+            <p>Payments</p>
+        </div>
+
+    </div>
+
+
+    
+    <div class="service-item">
+
+        <div class="service-icon">
+            <img src="images/products logo.png" alt="Premium Products">
+        </div>
+
+        <div class="service-text">
+            <h3>Premium</h3>
+            <p>Products</p>
+        </div>
+
+    </div>
+
+
+    
+    <div class="service-item">
+
+        <div class="service-icon">
+            <img src="images/deliverlogo (1).png" alt="Free Delivery">
+        </div>
+
+        <div class="service-text">
+            <h3>Free</h3>
+            <p>Delivery</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<section class="shopease-intro-banner">
+
+    <div class="shopease-intro-content">
+
+        <h1>ShopEase</h1>
+
+        <img src="images/logo1.png"
+             alt="ShopEase Logo"
+             class="shopease-intro-logo">
+
+        <p>
+            Welcome to ShopEase, your trusted online shopping destination where
+            quality, style and convenience come together. We make online shopping
+            simple, enjoyable and reliable, with a smooth experience from browsing
+            to checkout and fast delivery right to your doorstep.
+        </p>
+
+    </div>
+
+
+    
+   <div class="support-section">
+
+    <h2>Support</h2>
+
+    <p><span>›</span> Customer Service</p>
+    <p><span>›</span> Return Policy</p>
+    <p><span>›</span> Size Guide</p>
+    <p><span>›</span> Terms and Conditions</p>
+    <p><span>›</span> Contact</p>
+
+</div>
+
+
+<div class="stay-touch-section">
+
+    <h2>Stay in Touch</h2>
+
+    <div class="newsletter-row">
+        <span>Subscribe to our newsletter</span>
+        <span class="plus-circle">+</span>
+    </div>
+
+    <h3>Social</h3>
+
+    <div class="social-icons">
+        <a href="#" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="#" aria-label="Google">
+            <i class="fab fa-google"></i>
+        </a>
+
+        <a href="#" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+</div>
+<div class="shopease-thankyou">
+    <div class="thankyou-line"></div>
+    <p>Thank you for choosing ShopEase Shop with us again!</p>
+</div>
+<div class="bottom-links">
+    <span>Women</span>
+    <span>Men</span>
+    <span>Kids</span>
+    <span>Home Deco</span>
+    <span>Contact</span>
+</div>
+</section>
+
+
+
+
+
+<div 
+    id="loginBox" 
+    class="login-box" 
+> 
+ 
+    <div class="login-content"> 
+ 
+ 
+ 
+        <span 
+            class="close" 
+            onclick="closeLogin()" 
+        > 
+            &times; 
+        </span> 
+ 
+ 
+        <h2> 
+            Login 
+        </h2> 
+ 
+ 
+        <input 
+            type="text" 
+            id="username" 
+            placeholder="Username" 
+        > 
+ 
+ 
+ 
+        <input 
+            type="password" 
+            id="password" 
+            placeholder="Password" 
+        > 
+ 
+ 
+ 
+        <div class="captcha-box"> 
+ 
+            <span id="captchaText"></span> 
+ 
+            <button 
+                type="button" 
+                onclick="generateCaptcha()" 
+            > 
+                ↻ 
+            </button> 
+ 
+        </div> 
+ 
+ 
+        <input 
+            type="text" 
+            id="captchaInput" 
+            placeholder="Enter CAPTCHA" 
+        > 
+ 
+ 
+        <a 
+            href="#" 
+            class="forgot" 
+            onclick="forgotPassword(); return false;" 
+        > 
+            Forgot Password? 
+        </a> 
+ 
+ 
+ 
+        <button 
+            type="button" 
+            onclick="loginUser()" 
+        > 
+            Login 
+        </button> 
+ 
+ 
+    </div> 
+ 
+</div> 
+ 
+ 
+ 
+<script src="script.js"></script> 
+ 
+ 
+</body> 
+ 
+</html> 
+ 
